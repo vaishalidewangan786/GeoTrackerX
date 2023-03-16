@@ -6,6 +6,77 @@
 body{
     font-family: 'Rubik', sans-serif;
     font-size: 1.125rem;
+    background-image: url('./assets/pattern-bg-desktop.png');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+h1{
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    padding: 15px;
+}
+input{
+    width: 28rem;
+    padding: 15px 25px;
+    font-size: 1rem;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    margin:25px;
+    color:rgb(102, 98, 98);
+    letter-spacing: 1.5px;
+    border-radius: 15px;
+    border: none;
+}
+.hero{
+}
+.detail{
+    background-color: white;
+    display: grid;
+    grid-auto-flow: column;
+    padding: 20px;
+    grid-template-columns: 1fr 20px 1fr 20px 1fr 20px 1fr;
+    padding: 30px 50px;
+    width: 75vw;
+}
+.detail p{
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+.detail span{
+    font-size: 3rem;
+    font-weight: 100;
+    background-color: gray;
+    height: 3rem;
+    width: 0.2px;
+}
+#popup-btn{
+    width: fit-content;
+    padding: 10px;
+}
+.container{
+    display: grid;
+    justify-content: center;
+    grid-auto-flow: row;
+    width: 100vw;
+}
+#popup{
+    display:none;
+    background-color: blue;
+    width: 100%;
+    box-sizing: border-box;
+}
+#map{
+    height: 500px;
+}
+.popup-content{
+    display: grid;
+    grid-auto-flow: row;
+    height: 100vh;
+}
+.popup-content button{
+    display: relative;
+}
+
 /* - Very Dark Gray: hsl(0, 0%, 17%)
 - Dark Gray: hsl(0, 0%, 59%) */

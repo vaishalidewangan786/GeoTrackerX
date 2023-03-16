@@ -6,17 +6,59 @@ const getInfo=(searchIp)=>{
     fetch(url)
     .then((response)=>response.json())
     .then(data=>{
-        console.log(data);
+        // console.log(data);
+        document.getElementById("ipaddress").innerText=data.ip;
+        document.getElementById("location").innerText=`${data.location.city}, ${data.location.country}, ${data.location.postalCode}`;
+        document.getElementById("timezone").innerText=`${data.location.timezone}`;
+        document.getElementById("isp").innerText=`${data.isp}`;
+
+        document.getElementById("country").innerText=`${data.location.country}`;
+        document.getElementById("region").innerText=`${data.location.region}`;
+        document.getElementById("city").innerText=`${data.location.city}`;
+        document.getElementById("postalCode").innerText=`${data.location.postalCode}`;
+        document.getElementById("geonameId").innerText=`${data.location.geonameId}`;
+        document.getElementsByClassName("domains").innerText=`${data.domains}`;
+        document.getElementById("asn").innerText=`${data.as.asn}`;
+        document.getElementById("name").innerText=`${data.as.name}`;
+        document.getElementById("route").innerText=`${data.as.route}`;
+        document.getElementById("domain").innerText=`${data.as.domain}`;
+        document.getElementById("type").innerText=`${data.as.type}`;
+        document.getElementById("isp2").innerText=`${data.as.isp2}`;
+        document.getElementById("proxy").innerText=`${data.proxy.proxy}`;
+        document.getElementById("vpn").innerText=`${data.proxy.vpn}`;
+        document.getElementById("tor").innerText=`${data.proxy.tor}`;
     })
     .catch(e=>console.log(e))
 }
+function popupToggle(){
+    let currDisplay=document.getElementById("popup").style.display;
+    console.log(currDisplay);
+    if(currDisplay==="none"||currDisplay==="")document.getElementById("popup").style.display="inline-flex";
+    else document.getElementById("popup").style.display="none";
+    // Attention Needed
+    // let currDisplay=document.getElementById("popup").classList;
+    // console.log(currDisplay)
+    // if(currDisplay.contains("inactive")){
+    //     currDisplay.remove("inactive")
+    //     currDisplay.add("active")
+    // }
+    // else{
+    //     currDisplay.remove("active")
+    //     currDisplay.add("inactive")
+    // }
+}
 
-function myfun(){
+function getResults(){
     input= document.getElementById('inp').value;      
     getInfo(input);
     console.log(input);
 };
 
+var map = L.map('map').setView([37.38605, -122.08385], 13);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
 
 
 
