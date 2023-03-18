@@ -7,34 +7,20 @@ const getInfo=(searchIp)=>{
     .then((response)=>response.json())
     .then(data=>{
         // console.log(data);
-        document.getElementById("ipaddress").innerText=data.ip;
-        document.getElementById("location").innerText=`${data.location.city}, ${data.location.country}, ${data.location.postalCode}`;
-        document.getElementById("timezone").innerText=`${data.location.timezone}`;
-        document.getElementById("isp").innerText=`${data.isp}`;
-
-        document.getElementById("country").innerText=`${data.location.country}`;
-        document.getElementById("region").innerText=`${data.location.region}`;
-        document.getElementById("city").innerText=`${data.location.city}`;
-        document.getElementById("postalCode").innerText=`${data.location.postalCode}`;
-        document.getElementById("geonameId").innerText=`${data.location.geonameId}`;
-        document.getElementsByClassName("domains").innerText=`${data.domains}`;
-        document.getElementById("asn").innerText=`${data.as.asn}`;
-        document.getElementById("name").innerText=`${data.as.name}`;
-        document.getElementById("route").innerText=`${data.as.route}`;
-        document.getElementById("domain").innerText=`${data.as.domain}`;
-        document.getElementById("type").innerText=`${data.as.type}`;
-        document.getElementById("isp2").innerText=`${data.as.isp2}`;
-        document.getElementById("proxy").innerText=`${data.proxy.proxy}`;
-        document.getElementById("vpn").innerText=`${data.proxy.vpn}`;
-        document.getElementById("tor").innerText=`${data.proxy.tor}`;
+        
     })
     .catch(e=>console.log(e))
 }
 function popupToggle(){
     let currDisplay=document.getElementById("popup").style.display;
     console.log(currDisplay);
-    if(currDisplay==="none"||currDisplay==="")document.getElementById("popup").style.display="inline-flex";
-    else document.getElementById("popup").style.display="none";
+    if(currDisplay==="none"||currDisplay===""){
+        document.getElementById("popup").style.display="block"; 
+    }
+    else {
+        document.getElementById("popup").style.display="none";  
+          
+    }
     // Attention Needed
     // let currDisplay=document.getElementById("popup").classList;
     // console.log(currDisplay)
@@ -54,13 +40,19 @@ function getResults(){
     console.log(input);
 };
 
-var map = L.map('map').setView([37.38605, -122.08385], 13);
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
 
 
+var map = L.map('map');
+const drawMap=(lat,lng)=>{
+    console.log(lat ,lng);
+   map.setView([lat, lng], 13);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+    
+}
+drawMap(37.38605,-122.0);
 
 
 
@@ -70,7 +62,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 // Object prototype:
-res={
+data={
     "ip": "142.250.191.78",
     "location": {
         "country": "US",
@@ -103,6 +95,43 @@ res={
         "tor": false
     }
 };
+
+
+let a1=document.getElementById("ipaddress").innerText;
+        if(data.ip){
+            a1=data.ip;
+        }
+        else{
+            a1="NA";
+        }
+        document.getElementById("ip").innerText=data.ip;
+        document.getElementById("location").innerText=`${data.location.city}, ${data.location.country}, ${data.location.postalCode}`;
+        document.getElementById("timezone").innerText=`${data.location.timezone}`;
+        document.getElementById("isp").innerText=`${data.isp}`;
+        document.getElementById("country").innerText=`${data.location.country}`;
+        document.getElementById("region").innerText=`${data.location.region}`;
+        document.getElementById("city").innerText=`${data.location.city}`;
+        document.getElementById("postalCode").innerText=`${data.location.postalCode}`;
+        document.getElementById("geonameId").innerText=`${data.location.geonameId}`;
+        document.getElementsByClassName("domains").innerText=`${data.domains}`;
+        document.getElementById("asn").innerText=`${data.as.asn}`;
+        document.getElementById("name").innerText=`${data.as.name}`;
+        document.getElementById("route").innerText=`${data.as.route}`;
+        document.getElementById("domain").innerText=`${data.as.domain}`;
+        document.getElementById("type").innerText=`${data.as.type}`;
+        document.getElementById("isp2").innerText=`${data.as.isp2}`;
+        document.getElementById("proxy").innerText=`${data.proxy.proxy}`;
+        document.getElementById("vpn").innerText=`${data.proxy.vpn}`;
+        document.getElementById("tor").innerText=`${data.proxy.tor}`;
+        drawMap(data.location.lat,data.location.lng);
+
+
+
+
+
+
+
+
 
 
 // Attention needed!!!!
