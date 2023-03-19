@@ -13,12 +13,13 @@ const getInfo=(searchIp)=>{
 }
 function popupToggle(){
     let currDisplay=document.getElementById("popup").style.display;
-    console.log(currDisplay);
     if(currDisplay==="none"||currDisplay===""){
         document.getElementById("popup").style.display="block"; 
+        document.getElementById("popup-btn").style.display="none";
     }
     else {
         document.getElementById("popup").style.display="none";  
+        document.getElementById("popup-btn").style.display="block";
           
     }
     // Attention Needed
@@ -50,7 +51,7 @@ const drawMap=(lat,lng)=>{
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
-    
+    L.marker([lat, lng]).addTo(map);
 }
 drawMap(37.38605,-122.0);
 
@@ -123,6 +124,20 @@ let a1=document.getElementById("ipaddress").innerText;
         document.getElementById("proxy").innerText=`${data.proxy.proxy}`;
         document.getElementById("vpn").innerText=`${data.proxy.vpn}`;
         document.getElementById("tor").innerText=`${data.proxy.tor}`;
+
+        const size=data.domains.length;
+        console.log(size);
+        let currentDiv = document.querySelector("#dynamic");
+
+        for(let i=0; i<size && i<=5; i++){
+           let newP = document.createElement("p");
+            newP.textContent=data.domains[i];
+            currentDiv.appendChild(newP);
+            let br=document.createElement("br");
+            currentDiv.appendChild(br);
+        }
+
+
         drawMap(data.location.lat,data.location.lng);
 
 

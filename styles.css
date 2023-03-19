@@ -87,6 +87,7 @@ border-radius: 15px;
 .headname{
    color: rgb(119, 118, 118);
    font-size: smaller;
+   margin: 5px;
 
 }
 #popup-btn{
@@ -98,11 +99,13 @@ border-radius: 15px;
     background-color: black;
     border: none;
     cursor: pointer;
+    display: block;
+    font-weight: 600;
 }
 .popup-content{
     display: grid;
   text-align: center;
-
+  border-collapse: collapse;
 }
 
 .popup-content .ip-row{
@@ -112,6 +115,8 @@ border-radius: 15px;
 }
 .ip-row , .mid-row  ,.proxy-row{
     border:solid 1px black;
+    margin: 15px;
+    
 }
 .popup-content .mid-row{
     display: grid;
@@ -123,9 +128,26 @@ border-radius: 15px;
     grid-column: 1/span 3;
     grid-template-columns:  auto auto auto ;
 }
-
+.popup-content .headname{
+    color: rgb(252, 252, 252);
+    font-size: 1.2rem;
+    margin: 5px;
+    background-color:rgb(92 125 231);
+}
 .popup-content .proxyrow{
     grid-column: 1/span 3;
+}
+.col{
+  border-right:solid 1px black; 
+}
+.as, #proxy{
+    border-right:none;
+}
+#tor , #vpn{
+    border-right:none;
+}
+.border{
+    border-top:solid 1px black;
 }
 #popup{
 position: absolute;
@@ -140,6 +162,10 @@ border: 2px solid rgb(41, 43, 39);
 display: none;
 z-index: 4;
 }   
+.spanname{
+    color: rgb(119, 118, 118);
+    margin-right: 10px;
+}
 #map{
    height:70vh;
    z-index: 2;

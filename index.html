@@ -70,7 +70,6 @@
         <div id="popup" class="inactive">
             <h2>Details</h2>
             <button id="popdown-btn" onclick="popupToggle()"><i class="fa-solid fa-xmark"></i></button>    
-            <hr>
             <div class="popup-content">
                 <div class="ip-row">
                     <p class="headname" >IP address</p>
@@ -79,33 +78,34 @@
                 <div class="mid-row">
                     <div class="location col" >
                         <p class="headname">Location</p>
-                        <span>Country</span><p id="country"></p>
-                        <span>Region</span><p id="region"></p>
-                        <span>City</span><p id="city"></p>
-                        <span>PostalCode</span><p id="postalCode"></p>
-                        <span>GeonameId</span><p id="geonameId"></p>
+                        <p><span class="spanname">Country</span><span id="country">NA</span></p>
+                        <p><span class="spanname">Region</span><span id="region">NA</span></p>
+                        <p><span class="spanname">City</span><span id="city">NA</span></p>
+                        <p><span class="spanname">PostalCode</span><span id="postalCode">NA</span></p>
+                        <p><span class="spanname">GeonameId</span><span id="geonameId">NA</span></p>
                     </div>
                     
                     
                     <div class="domains col">
-                        <p class="headname">domain</p>
+                        <p class="headname">Domains</p>
+                        <div id="dynamic"></div>
                     </div>
 
                     <div class="as col">
                         <p class="headname">AS</p>
-                        <p id="asn"></p>
-                        <p id="name"></p>
-                        <p id="route"></p>
-                        <p id="domain"></p>
-                        <p id="type"></p>
-                        <p id="isp2"></p>
+                        <p><span class="spanname">Asn</span><span id="asn">NA</span></p>
+                        <p><span class="spanname">Name</span><span id="name">NA</span></p>
+                        <p><span class="spanname">Route</span><span id="route">NA</span></p>
+                        <p><span class="spanname">domain</span><span id="domain">NA</span></p>
+                        <p><span class="spanname">Type</span><span id="type">NA</span></p>
+                        <p><span class="spanname">isp2</span><span id="isp2">NA</span></p>
                     </div>
                 </div>
                 <div class="proxy-row">
                     <p class="headname proxyrow">Proxy</p>
-                    <p class="col" id="vpn"></p>
-                    <p class="col" id="tor"></p>
-                    <p class="col" id="proxy"></p>
+                    <p class="border"><span class="spanname">Vpn</span><span class="col" id="vpn">NA</span></p>
+                    <p class="border"><span class="spanname">Tor</span><span class="col" id="tor">NA</span></p>
+                    <p class="border"><span class="spanname">Proxy</span><span class="col" id="proxy">NA</span></p>
                 </div>
             </div>
     
