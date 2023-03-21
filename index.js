@@ -29,9 +29,11 @@ const getInfo=(searchIp)=>{
         document.getElementById("tor").innerText=`${data.proxy.tor}`;
         const size=data.domains.length;
         console.log(size);
-        
-        let currentDiv = document.querySelector("#dynamic");
-        console.log("hii");
+        let currentDiv = document.getElementById("dynamic");
+       
+        while (currentDiv.firstChild) {
+        currentDiv.removeChild(currentDiv.firstChild);
+        }
         console.log(currentDiv);
         for(let i=0; i<size && i<=5; i++){
         let newP = document.createElement("p");
