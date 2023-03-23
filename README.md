@@ -9,8 +9,6 @@ Access my site at [GeoTrackerX](https://vaishalidewangan786.github.io/GeoTracker
 - [About The App](#about-the-app)
 - [Technologies](#technologies)
 - [Screenshots](#screenshots)
-- [Setup](#setup)
-- [Status](#status)
 - [License](#license)
 
 ## About The App
@@ -33,13 +31,15 @@ Access my site at [GeoTrackerX](https://vaishalidewangan786.github.io/GeoTracker
 ## Screenshots
 ### Desktop States<br/>
  <b>In active state</b><br/><br/>
- <img src="C:\Users\Win-10\Downloads\vaishalidewangan786.github.io-GeoTrackerX.jpeg" /><br/>
- <img src="C:\Users\Win-10\Downloads\vaishalidewangan786.github.io-GeoTrackerX (1).jpeg" /><br/>
+ ![vaishalidewangan786 github io-GeoTrackerX](https://user-images.githubusercontent.com/95758463/227281004-9c60fbce-91f7-4483-a831-152a6c305fa1.jpeg)<br/><br/>
+![vaishalidewangan786 github io-GeoTrackerX (1)](https://user-images.githubusercontent.com/95758463/227281575-4b445d87-48fb-462a-a003-1fef74673a6e.jpeg)<br/><br/>
+
 
 ### Mobile States<br/>
  <b>In active state</b><br/><br/>
- <img src="C:\Users\Win-10\Downloads\IMG_20230323_222547.jpg" /><br/>
- <img src="C:\Users\Win-10\Downloads\IMG_20230323_222532.jpg" /><br/><br/>
+ ![IMG_20230323_222547](https://user-images.githubusercontent.com/95758463/227281736-526337a6-be74-45bb-b1ef-66dd6b482ce1.jpg)<br/><br/>
+![IMG_20230323_222532](https://user-images.githubusercontent.com/95758463/227281778-fe200d60-cf42-4553-a7b7-a78343127e41.jpg)<br/><br/>
+
  
 ## License
 Copyright © 2023 @ [Vaishali Dewangan](https://github.com/vaishalidewangan786/)
